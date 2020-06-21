@@ -78,3 +78,14 @@ curl --location --request PATCH 'localhost:3000/users/5eee370474acd1459077b901' 
 ```
 
 **Development Requirement**
+I have completed the following requirements:
+1. The main flows:
+    1.1 Phone number input
+    1.2 Phone number verification
+    1.3 Account information input
+2. The designed APIs:
+    - /send: Phone number input. I thought about the /resend API. It can use the same /send API.
+    - /verify: Phone number verification.
+    - /users/{id}: Account information input. To update the account information.
+3. The database: MongoDB
+4. Programming languare: Node.js
