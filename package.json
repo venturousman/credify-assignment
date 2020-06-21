@@ -1,0 +1,26 @@
+{
+  "name": "credify_coding_assignment",
+  "version": "1.0.0",
+  "description": "Credify coding assignment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "#readme",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "body-parser": "^1.19.0",
+    "countries-list": "^2.5.4",
+    "express": "^4.17.1",
+    "inversify": "^5.0.1",
+    "inversify-express-utils": "^6.3.2",
+    "mongoose": "^5.9.19",
+    "reflect-metadata": "^0.1.13",
+    "swagger-ui-express": "^4.1.4",
+    "twilio": "^3.46.0"
+  }
+}
