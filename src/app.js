@@ -28,6 +28,15 @@ app.all('*', (req, res) => {
     res.status(404).send({ msg: '404! You are going to the wrong way. Please go back!' });
 });
 
+app.use((err, req, res) => {
+    res.status(err.status || 500);
+    res.json({
+        errors: {
+            message: err.message
+        }
+    });
+});
+
 // === configure database
 const db = require('../src/models');
 db.mongoose.connect(db.url, { useNewUrlParser: true, useUnifiedTopology: true })
