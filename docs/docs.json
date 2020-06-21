@@ -16,6 +16,10 @@
     {
       "name": "user",
       "description": "Operations about user"
+    },
+    {
+      "name": "verification",
+      "description": "Operations about verification"
     }
   ],
   "paths": {
@@ -31,7 +35,15 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/src/schemas/verification"
+                "type": "object",
+                "properties": {
+                  "phone": {
+                    "type": "string"
+                  },
+                  "country": {
+                    "type": "string"
+                  }
+                }
               }
             }
           },
@@ -76,7 +88,15 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/src/schemas/verification"
+                "type": "object",
+                "properties": {
+                  "phone": {
+                    "type": "string"
+                  },
+                  "verificationCode": {
+                    "type": "string"
+                  }
+                }
               }
             }
           },
@@ -107,6 +127,107 @@
                       },
                       "valid": {
                         "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "patch": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Update the account information",
+        "parameters": [
+          {
+            "name": "id",
+            "description": "ID of user that needs to be updated",
+            "required": true,
+            "type": "string",
+            "paramType": "path"
+          }
+        ],
+        "operationId": "patch",
+        "requestBody": {
+          "description": "User schema object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "province": {
+                    "type": "string"
+                  },
+                  "city": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "postalCode": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "user": {
+                    "type": "object",
+                    "properties": {
+                      "firstName": {
+                        "type": "string"
+                      },
+                      "lastName": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "phone": {
+                        "type": "string"
+                      },
+                      "country": {
+                        "type": "string"
+                      },
+                      "province": {
+                        "type": "string"
+                      },
+                      "city": {
+                        "type": "string"
+                      },
+                      "address": {
+                        "type": "string"
+                      },
+                      "postalCode": {
+                        "type": "string"
                       }
                     }
                   }
